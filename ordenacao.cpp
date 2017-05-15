@@ -2,16 +2,17 @@
 #include <vector>
 using namespace std;
 
-void insertion_sort(int *A, int n);
+void insertion_sort(vector<int>& A);
 
 int main(){
-	int n, i;
+	int n, i, valor;
 	cin >> n;
-	int A[n];
+	vector <int> A;
 	for(int i = 0; i < n; i++){
-		cin >> A[i];
+		cin >> valor;
+		A.push_back(valor);
 	} 
-	insertion_sort(A, n);
+	insertion_sort(A);
 	for(int i = 0; i < n; i++){
 		cout << A[i] << " ";
 	}
@@ -19,8 +20,8 @@ int main(){
 	return 0;	
 }
 
-void insertion_sort(int *A, int n){
-	for(int j = 1; j < n; j++){
+void insertion_sort(vector<int>& A){
+	for(int j = 1; j < A.size(); j++){
 		int chave = A[j];
 		int i = j - 1;
 		while( i >= 0 && A[i] > chave){
